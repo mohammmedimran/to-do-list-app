@@ -1,0 +1,136 @@
+
+
+<div id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+      <div class="topnav">
+          <a > <button  style="background-color: skyblue;" (click)="o()" class="btn"><span id="u">&#9776; Home</span></button></a>
+          <div class="topnav-right">
+         <a routerLink="/login">logout</a>
+          </div>
+        
+        </div>
+        <div id="mySidenav" class={{side}}>
+          <button  id="cancel" class="closebtn" (click)="c1()">&times;</button>
+          <a ><button  style="background-color: skyblue;" (click)="all('false')" class="btn"><i class="fa fa-folder" ></i>alltodos<span>{{alltodos}}</span></button></a>
+          <a > <button  style="background-color: skyblue;" (click)="uncheck()" class="btn"><span id="u">X</span>uncheckedtodos</button></a>
+            
+          <a> <button  style="background-color:  skyblue;" (click)="checkedmsgs('false')" class="btn"><i class="fa fa-check-square" ></i> checked todos</button></a>
+
+          <a> <button  style="background-color:  skyblue;" (click)="perticular()" class="btn"> perticular todos</button></a>
+         
+        </div>
+         
+       <!------->
+       <div class={{perticular1}} >
+          <div class="form-container2">
+            <h5>please enter Date to get perticular date to-dolist</h5>
+        
+            <label  #date><b>Date:</b></label>
+            <input type="date"  required [(ngModel)]="perticu">
+            <button type="button" class="btn cancel" (click)="perticularclose(perticu)">submit</button>
+            <button type="button" class="btn cancel" (click)="perticularclose1()">close</button>
+          </div>
+        </div>
+        <!------->
+
+
+
+        <!------->
+               <div class={{My}}  >
+            <div class="form-container">
+              <h5>Enter Time and Date</h5>
+          
+              <label  #date><b>Date:</b></label>
+              <input type="date"  required [(ngModel)]="d">
+              
+              <br>
+              <br>
+              <label #Time><b>Time:</b></label>
+              <input type="time" required  [(ngModel)]="t">
+              <br>
+              <br>
+              <label ><b>Description:</b></label>
+              <textarea placeholder="please enter Description"   [(ngModel)]="text"></textarea> 
+
+              <button type="submit" class="btn" (click)="addtodos(m,d,t,text);text=''" >Submit</button>
+              <button type="button" class="btn cancel" (click)="closeForm()">Close</button>
+            </div>
+          </div>
+      <!------->
+
+
+        <!----<span id="welcome">welcome to to-dolist</span><br>
+        <span id="name">{{p}}</span>--->
+
+
+
+
+      <!------->  
+      <div class="card"  id={{hh}} >
+
+
+
+        <!--1st card////////////-->
+        <div class="card-header" id="head1">
+          <a ><button  style="background-color: blue;margin-left:10%;color:white" (click)="all('false')" class="btn"><i class="fa fa-folder" ></i>alltodos<span>{{alltodos}}</span></button></a>
+          <a > <button  style="background-color: blue;margin-left:10%;color:white" (click)="uncheck()" class="btn"><i class="fa fa-square-o" ></i><span id="u">X</span>uncheckedtodos</button></a>
+                    
+          <a> <button  style="background-color: blue;margin-left:10%;color:white" (click)="checkedmsgs('false')" class="btn"><i class="fa fa-check-square" ></i> checked todos</button></a>
+        
+          <a> <button  style="background-color: blue;margin-left:10%;color:white" (click)="perticular()" class="btn"> perticular todos</button></a>
+
+        </div>
+
+
+        <!--2nd card////////////-->
+<div class="card-header">
+  
+<input type="text" placeholder="Add todo Title"  [(ngModel)]="m">
+         <button id="but" (click)="openForm(m);">
+           +</button><br>
+          </div>
+
+       <div class="card-body" class="modal-content animate">
+          <span id="{{dd}}">{{Display}}</span>
+        <div class="flex-container"   *ngFor="let t of todos"  (click)="desc(t.label,hh)" >
+          <div>{{t.label}}</div>
+          <div>{{t.date}}</div>
+          <div>{{t.time}}</div>
+         
+          <div><button (click)="check(t)" id="{{t.done}}" ><i class="fa fa-eye" ></i>
+            {{t.done? '&#10003;':''}} 
+            
+          </button></div>
+          <div><button (click)="deletetodo(t)" id="c1" ><i class="fa fa-trash" ></i></button></div>
+
+          <div><button (click)="edit(t.label)">Edit</button></div>
+         
+         
+        </div>
+                </div>
+            </div>
+            <div class={{ora}} >
+            <div class="form-container1"   class="modal-content animate" >
+              <div class="card1" *ngFor="let td of one">
+              <div class="card-header1">
+               
+                <label><i>{{td.label}}</i></label>
+              </div>
+              <div class="card-body1">
+                <label>Description:</label><br>
+                <label>{{td.Description}}</label>
+              </div>
+              <div class="card-fotter1">
+                <label>Date:</label>
+                <label>{{td.date}}</label>
+                <br>
+                <label>Time:</label>
+                <label>{{td.time}}</label>
+              </div>
+            </div>
+<button type="button" id="tabbutton" class="btn cancel" (click)="close()">Close</button>
+            </div>
+            </div>
+            <!--2nd card////////////-->
+          </div>
+       <router-outlet></router-outlet>
