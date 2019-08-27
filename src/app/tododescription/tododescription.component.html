@@ -1,0 +1,26 @@
+
+
+<div class={{DescriptionCard}} >
+    <div class="form-container1"   class="modal-content animate" >
+      <div class="card1" *ngFor="let descriptiondata of DescriptionData">
+      <div class="card-header1">
+       <label><i>{{descriptiondata.label}}</i></label>
+      </div>
+      <div class="card-body1">
+        <label>Description:</label><br>
+        <label>{{descriptiondata.Description}}</label>
+      </div>
+      <div class="card-fotter1">
+        <label>Date:</label>
+        <label>{{descriptiondata.date}}</label>
+        <br>
+        <label>Time:</label>
+        <label>{{descriptiondata.time}}</label>
+      </div>
+      <button type="button" id="tabbutton" class="btn cancel" (click)="close()">Close</button>
+    </div>
+    
+   </div>
+    </div>
+    
+   

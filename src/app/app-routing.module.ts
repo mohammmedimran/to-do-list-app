@@ -11,9 +11,7 @@ const routes: Routes = [
   {path:"register",component:RegisterComponent},
   {path:"Home",component:HomeComponent},
   {path:"todohome",component:TodoHomeComponent,canActivate:[AuthGuard]}
-  //canActivate:[AuthGuard]}
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

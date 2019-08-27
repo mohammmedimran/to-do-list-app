@@ -8,21 +8,30 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { TodoHomeComponent } from './todo-home/todo-home.component';
 import {AuthGuard}from './auth.guard';
-import { Service1Service } from './service1.service';
+import { TodoheaderComponent } from './todoheader/todoheader.component';
+import { LoginService } from './login.service';
+import { TododescriptionComponent } from './tododescription/tododescription.component';
+import { TodoHomeBodyComponentComponent } from './todo-home-body-component/todo-home-body-component.component';
+import { TodoService } from './todo.service';
+import { TodoHomeDateTimeComponentComponent } from './todo-home-date-time-component/todo-home-date-time-component.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    TodoHomeComponent
+    TodoHomeComponent,
+    TodoheaderComponent,
+    TododescriptionComponent,
+    TodoHomeBodyComponentComponent,
+    TodoHomeDateTimeComponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [AuthGuard,Service1Service],
+  providers: [AuthGuard,LoginService,TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,33 @@
+
+
+
+
+
+<div class={{EnterDateTime}}>
+
+        <div class="form-container">
+           <h5>Enter Time and Date</h5>
+           <label  ><b>Date:</b></label>
+           <input type="date"  required [(ngModel)]="date">
+          
+          <br>
+          <br>
+          <label><b>Time:</b></label>
+          <input type="time" required  [(ngModel)]="time">
+          <br>
+          <br>
+          <label ><b>Description:</b></label>
+          <textarea placeholder="please enter Description"   [(ngModel)]="Description"></textarea> 
+               
+          <button  type="submit" class="btn" (click)="addtodos(TextValue1,date,time,Description);Description=''">Submit</button>
+          
+          
+
+          <button type="button" class="btn cancel" (click)="CloseDateTimeBlock()">Close</button>
+         
+        </div>
+        
+      </div>
+    
+    
+    

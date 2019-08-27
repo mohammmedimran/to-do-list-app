@@ -1,7 +1,5 @@
 
 <div id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-  
-  
 <form class="modal-content animate" #userForm="ngForm">
     
         <div class="imgcontainer">
@@ -16,7 +14,7 @@
               <input type="text" required  
               #name="ngModel" [class.is-invalid]="name.invalid && name.touched"  
               class="form-control"  name="username"
-                  [(ngModel)]="var1" >
+                  [(ngModel)]="Username" >
                   <br>
               <small class="text-danger" [class.d-none]="name.valid || name.untouched">name is required</small>
               </div>
@@ -26,9 +24,9 @@
                 <input type="password"  pattern="^\d{10}$" #ph="ngModel" required
                 [class.is-invalid]="ph.invalid && ph.touched"  
                 class="form-control"  name="pw"
-                    [(ngModel)]="var2" >
+                    [(ngModel)]="Password" >
                     <br>
-                    <!----<small class="text-danger" [class.d-none]="ph.valid || ph.untouched">password </small>-->
+                    
                     <div *ngIf="ph.errors && (ph.invalid && ph.touched)">
                       <small class="text-danger"  *ngIf="ph.errors.required">password required</small>
                       
@@ -40,21 +38,10 @@
                    {{msg}}
                   
                    
-             <button (click)="m1(var1,var2)" type="button" >Login</button>
+             <button (click)="login(Username,Password)" type="button" >Login</button>
             
             </div>
             <a routerLink="/register">Register</a>
           </form>
-
-
-
-
-
-
-
-
-
-
-
-        </div>
+       </div>
  

@@ -1,0 +1,39 @@
+<div class={{perticularDateTodos}} >
+  <div class="form-container2">
+    <h5>please enter Date to get perticular date to-dolist</h5>
+
+    <label  #date><b>Date:</b></label>
+    <input type="date"  required [(ngModel)]="perticulardate">
+    <button type="button" class="btn cancel" (click)="perticularDateTodosSubmit(perticulardate)">submit</button>
+    <button type="button" class="btn cancel" (click)="perticularDateTodosclose()">close</button>
+  </div>
+</div>
+<div class="card-header">
+  <input type="text" placeholder="Add todo Title"  [(ngModel)]="TextValue">
+  <button id="but" (click)="datetime.OpenDateTimeBlock(TextValue)">
+  +</button><br>
+ </div>
+<div class="card"  id={{DescriptionSlide}} >
+  <div class="card-body" class="modal-content animate">
+      <span id="{{NoTodos}}">{{Display}}</span>
+    <div class="flex-container"   *ngFor="let reftodo of todos"  (click)="appdescription.desc(reftodo.label)" >
+      <div>{{reftodo.label}}</div>
+      <div>{{reftodo.date}}</div>
+      <div>{{reftodo.time}}</div>
+     
+      <div><button (click)="check(reftodo)" id="{{reftodo.done}}" ><i class="fa fa-eye" ></i>
+        {{reftodo.done? '&#10003;':''}} 
+        </button></div>
+      <div><button (click)="DeleteTodo(reftodo)" id="DeleteButtonColor" ><i class="fa fa-trash" ></i></button></div>
+  
+      <div><button (click)="datetime.edit(reftodo.label,reftodo.time,reftodo.date,reftodo.Description)" id="DeleteButtonColor" >Edit</button></div>
+    </div>
+    </div>
+    </div>
+
+
+    <app-todo-home-date-time-component #datetime
+    (todorefresh)="todos=$event" (ReturnTextValue)="TextValue=$event" [TextValue1]="TextValue"
+    (NoTodos)="NoTodos=$event"  (Display)="Display=$event"
+    ></app-todo-home-date-time-component>
+    <app-tododescription #appdescription (DescriptionSlide)="DescriptionSlide=$event"></app-tododescription>
