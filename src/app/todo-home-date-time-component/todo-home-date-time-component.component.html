@@ -17,9 +17,9 @@
           <br>
           <br>
           <label ><b>Description:</b></label>
-          <textarea placeholder="please enter Description"   [(ngModel)]="Description"></textarea> 
+          <textarea (change)="CallMethodWhenChanges()" placeholder="please enter Description"   [(ngModel)]="Description"></textarea> 
                
-          <button  type="submit" class="btn" (click)="addtodos(TextValue1,date,time,Description);Description=''">Submit</button>
+          <button [disabled]='disabled' type="submit" class="btn" (click)="addtodos(TextValue1,date,time,Description);Description=''">Submit</button>
           
           
 

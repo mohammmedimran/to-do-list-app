@@ -16,7 +16,7 @@
 <div class="card"  id={{DescriptionSlide}} >
   <div class="card-body" class="modal-content animate">
       <span id="{{NoTodos}}">{{Display}}</span>
-    <div class="flex-container"   *ngFor="let reftodo of todos"  (click)="appdescription.desc(reftodo.label)" >
+    <div class="flex-container"   *ngFor="let reftodo of todos"  (click)="appdescription.desc(reftodo.label,false)" >
       <div>{{reftodo.label}}</div>
       <div>{{reftodo.date}}</div>
       <div>{{reftodo.time}}</div>
@@ -26,7 +26,7 @@
         </button></div>
       <div><button (click)="DeleteTodo(reftodo)" id="DeleteButtonColor" ><i class="fa fa-trash" ></i></button></div>
   
-      <div><button (click)="datetime.edit(reftodo.label,reftodo.time,reftodo.date,reftodo.Description)" id="DeleteButtonColor" >Edit</button></div>
+      <div><button (click)="datetime.edit(reftodo.label,reftodo.time,reftodo.date,reftodo.Description);appdescription.desc(reftodo.label,true)" id="DeleteButtonColor" >Edit</button></div>
     </div>
     </div>
     </div>

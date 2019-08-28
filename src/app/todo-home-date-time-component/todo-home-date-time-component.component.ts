@@ -13,9 +13,11 @@ export class TodoHomeDateTimeComponentComponent implements OnInit {
   @Output() NoTodos=new EventEmitter;
   @Output() Display=new EventEmitter;
   Description="";
+  previousDescription;
   time = "";
   date = "00:00:00";
   EnterDateTime = "EnterDateTimeNone";
+  disabled=false;
   constructor(private _TodoService: TodoService) { }
   OpenDateTimeBlock(value){
   if(value!=""){
@@ -61,10 +63,19 @@ export class TodoHomeDateTimeComponentComponent implements OnInit {
   }
   edit(label,date,time,Description){
     this.ReturnTextValue.emit(label);
+    this.previousDescription=Description;
     this.time =date;
     this.date = time;
     this.Description =Description;
     this.EnterDateTime = "EnterDateTimeBlock";
 
   }
+  callmethodwhenchange(){
+
+    if(this.Description===this.previousDescription){
+      this.disabled=true;
+    } 
+    if(this.Description!==this.previousDescription){
+      this.disabled=false;
+    } }
 }
