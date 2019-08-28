@@ -6,15 +6,15 @@ import { TodoService } from '../todo.service';
   styleUrls: ['./tododescription.component.css']
 })
 export class TododescriptionComponent implements OnInit {
- 
-  constructor(private _TodoService: TodoService) { }
-
-  ngOnInit() {
-  }
   DescriptionCard=" DescriptionCardclose";
   @Output() DescriptionSlide=new EventEmitter();
   toggle = "on";
    DescriptionData = [];
+  constructor(private _TodoService: TodoService) { }
+
+  ngOnInit() {
+  }
+  
   desc(Todoname) {
    
     if (this.toggle == "on") {
