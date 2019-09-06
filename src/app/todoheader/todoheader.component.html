@@ -1,0 +1,33 @@
+
+<div id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+    <div class="topnav">
+        <a > <button (click)="SidenavOpen()" class="headerbutton"><span id="u">&#9776; Home</span></button></a>
+        <div class="topnav-right">
+       <a routerLink="/login">logout</a>
+        </div>
+        </div>
+      <div id="mySidenav" class={{sidenavbar}}>
+        <button  id="cancel" class="closebtn" (click)="SidenavClose()">&times;</button>
+        <a ><button   (click)="child.all('false')" class="btn"><i class="fa fa-folder" ></i>alltodos<span>{{alltodos}}</span></button></a>
+        <a > <button   (click)="child.uncheck()" class="btn"><span id="u">X</span>uncheckedtodos</button></a>
+          
+        <a> <button   (click)="child.checkedmsgs('false')" class="btn"><i class="fa fa-check-square" ></i> checked todos</button></a>
+
+        <a> <button   (click)="child.perticular()" class="btn"> perticular todos</button></a>
+       
+      </div>
+      <div class="card-header" id="head1">
+        <a ><button  title="all Todos" style="margin-left:10%;" (click)="child.all('false')" class="btn"><i class="fa fa-folder" ></i>alltodos<span>{{alltodos}}</span></button></a>
+        <a > <button title="uncheck todo" style="margin-left:10%;"  (click)="child.uncheck()" class="btn"><i class="fa fa-square-o" ></i><span id="u">X</span>uncheckedtodos</button></a>
+                  
+        <a> <button  title="check todo" style="margin-left:10%;" (click)="child.checkedmsgs()" class="btn"><i class="fa fa-check-square" ></i> checked todos</button></a>
+      
+        <a> <button title="perticular datetodos" style="margin-left:10%;" (click)="child.perticular()" class="btn"> perticular todos</button></a>
+
+      </div>
+      
+      </div>
+      <app-todo-home-body-component #child ></app-todo-home-body-component>
+      
+   

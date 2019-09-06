@@ -1,0 +1,66 @@
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size:cover;
+    background-image: url("../../assets/images/TodoList.gif");
+    border-radius: 8.5%;
+    
+  }
+  .form-container .btn {
+    background-color:rgb(62, 100, 0);
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  .form-container .cancel {
+    background-color: red;
+  }
+ .EnterDateTimeNone{
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 10px solid black;
+    z-index: 9;
+    border-radius: 10%; 
+  }
+  .EnterDateTimeBlock{
+    display: block;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 10px solid black;
+    z-index: 9;
+    border-radius: 10%;
+  }
+  #false{
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
+  #lightgreen{
+    background-color: lightgreen;
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+ 
+
+ 
+  
+ 
+  
+  
+  

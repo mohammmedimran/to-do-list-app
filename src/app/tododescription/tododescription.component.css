@@ -1,0 +1,59 @@
+.open{
+    display: block;
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    border: 10px solid blue;
+    background-color:gray;
+    z-index: 9;
+    
+  }
+  
+  .close{
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right:10px;
+    border: 10px solid blue;
+    background-color:gray;
+    z-index: 9;
+   
+  }
+  .form-container1 {
+    width: 320px;
+    padding: 10px;
+    height: 500px;
+   background-color:black;
+  }
+  .card1{
+    background-color:gray;
+    width:240px;
+    height:510px;
+    border:10px solid whitesmoke;
+    
+  }
+  .card-header1{
+  height:90px;
+  border:10px  solid blue;
+  background-color:skyblue;
+  text-align:center;
+  position:center;
+  font-size:30px;
+  }
+  .card-body1{
+  background-color:black;
+  height:200px;
+  font:30px;
+  color:white;
+  }
+
+  #tabbutton{
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
