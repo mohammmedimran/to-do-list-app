@@ -17,9 +17,18 @@
           <br>
           <br>
           <label ><b>Description:</b></label>
-          <textarea (change)="CallMethodWhenChanges()" placeholder="please enter Description"   [(ngModel)]="Description"></textarea> 
+          <textarea placeholder="please enter Description"   [(ngModel)]="Description"></textarea> 
                
-          <button [disabled]='disabled' type="submit" class="btn" (click)="addtodos(TextValue1,date,time,Description);Description=''">Submit</button>
+          <div *ngIf="Description===previousDescription; else templateName">
+              <button type="button"   [disabled]=true id="disabledbutton"  class="btn" 
+              (click)="addtodos(TextValue1,date,time,Description);Description='';"><i>
+              Submit</i></button>
+          </div>
+          <ng-template #templateName>
+              <button type="button"    class="btn" 
+              (click)="addtodos(TextValue1,date,time,Description);Description='';"><i>
+               Submit</i></button>
+          </ng-template>
           
           
 

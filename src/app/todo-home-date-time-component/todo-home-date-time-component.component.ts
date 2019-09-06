@@ -61,21 +61,14 @@ export class TodoHomeDateTimeComponentComponent implements OnInit {
       alert("please fill correctly")
         }
   }
-  edit(label,date,time,Description){
+  edit(label,time,date,Description){
     this.ReturnTextValue.emit(label);
     this.previousDescription=Description;
-    this.time =date;
-    this.date = time;
+    this.time =time;
+    this.date = date;
     this.Description =Description;
     this.EnterDateTime = "EnterDateTimeBlock";
 
   }
-  callmethodwhenchange(){
-
-    if(this.Description===this.previousDescription){
-      this.disabled=true;
-    } 
-    if(this.Description!==this.previousDescription){
-      this.disabled=false;
-    } }
+ 
 }
