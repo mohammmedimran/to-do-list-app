@@ -5,8 +5,8 @@ import { TodoService } from '../todo.service';
   templateUrl: './todo-home-date-time-component.component.html',
   styleUrls: ['./todo-home-date-time-component.component.css']
 })
-export class TodoHomeDateTimeComponentComponent implements OnInit {
-  ngOnInit(){}
+export class TodoHomeDateTimeComponentComponent  {
+  
   @Input() TextValue1
   @Output() ReturnTextValue=new EventEmitter;
   @Output() todorefresh=new EventEmitter;
