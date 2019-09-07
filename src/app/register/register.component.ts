@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 message=""
-ReferenceVariable=new Register('','','');
+ReferenceVariable=new Register('','');
   constructor(private router:Router,private _LoginService:LoginService) { }
 
   ngOnInit() {

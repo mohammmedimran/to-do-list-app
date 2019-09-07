@@ -13,7 +13,7 @@ export class LoginService {
     this.LoginArray.push(UsernamePassword);
    }
    ToCheckAuthGuard=false;
-     ToSetAuthGuard(a){
+     ToSetAuthGuard(logedin){
        this.ToCheckAuthGuard=true;
     }
     AuthGuard(){

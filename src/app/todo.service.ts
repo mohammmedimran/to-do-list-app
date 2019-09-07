@@ -10,17 +10,16 @@ id=1;
 returnid(){
   return this.id;
 }
-addtodos(value){
-    console.log(value)
+addtodos(addtodo){
     this.todos.sort((Object1, Object2) => {
       return Object1.done - Object2.done;
     });
     this.id=this.id+1;
-    if(value!=""){
-     var h={id:this.id,label:value.label,date:value.date,time:value.time,done:value.done,Description:value.Description}
+   
+     var h={id:this.id,label:addtodo.label,date:addtodo.date,time:addtodo.time,done:addtodo.done,Description:addtodo.Description}
 this.todos.push(h);
   }
-}
+
   gettodo(){
    this.todos.sort((Todo1, Todo2) => {
       let Todo1date = Todo1.date;

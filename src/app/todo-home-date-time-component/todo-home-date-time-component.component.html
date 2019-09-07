@@ -12,15 +12,16 @@
     <br>
     <br>
     <label ><b>Description:</b></label>
-    <textarea  placeholder="please enter Description"   [(ngModel)]="Description"></textarea>
- <div *ngIf="(desc===Description); else templateName">
+
+    <textarea  placeholder="please enter Description"   [(ngModel)]="PresentDescription"></textarea>
+ <div *ngIf="(previousDescription===PresentDescription); else templateName">
     <button type="button"   [disabled]=true id="lightgreen"  class="btn" 
-    (click)="addtodos(TextValue1,date,time,Description);Description='';"><i>
+    (click)="addtodos(TextValue1,date,time,PresentDescription);PresentDescription='';"><i>
     Submit</i></button>
 </div>
 <ng-template #templateName>
     <button type="button"    class="btn" 
-    (click)="addtodos(TextValue1,date,time,Description);Description='';"><i>
+    (click)="addtodos(TextValue1,date,time,PresentDescription);PresentDescription='';"><i>
      Submit</i></button>
 </ng-template>
 <button type="button" class="btn cancel" (click)="CloseDateTimeBlock()"><i>Close</i></button>

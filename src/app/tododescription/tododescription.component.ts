@@ -17,8 +17,8 @@ export class TododescriptionComponent implements OnInit {
     this.DescriptionCard = "close";
     this.DescriptionSlide.emit("on")
   }
-  desc(Todoname,a) {
-    console.log(a)
+  descriptionslide(Todoname,descriptionslideoff) {
+    
    if (this.toggle == "on") {
       this.DescriptionCard = "open";
       this.DescriptionData = [];
